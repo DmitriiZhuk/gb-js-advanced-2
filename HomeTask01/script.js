@@ -1,4 +1,3 @@
-// Пример JSON-данных (замените данными из вашего источника)
 const scheduleData = [
   {
     name: "Занятие 1",
@@ -48,7 +47,6 @@ function createScheduleElement(data) {
 `;
   }
 
-  // Добавление обработчика события на кнопку "Записаться"
   const registerBtn = scheduleElement.querySelector("#registerBtn");
   registerBtn.addEventListener("click", () => {
     if (data.currentParticipants < data.maxParticipants) {
@@ -63,7 +61,6 @@ function createScheduleElement(data) {
     }
   });
 
-  // Добавление обработчика события на кнопку "Отменить запись"
   const cancelBtn = scheduleElement.querySelector("#cancelBtn");
   cancelBtn.addEventListener("click", () => {
     data.currentParticipants--;
@@ -75,9 +72,7 @@ function createScheduleElement(data) {
     registerBtn.style.display = "block";
   });
 
-  // Добавление элемента расписания на страницу
   document.getElementById("schedule").appendChild(scheduleElement);
 }
 
-// Загрузка данных и создание элементов расписания
 scheduleData.forEach(createScheduleElement);
